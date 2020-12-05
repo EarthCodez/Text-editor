@@ -1,10 +1,12 @@
 var c1=0;
 var c2=100;
 var c3=200;
-  var w=windowWidth;
-  var h=windowHeight;
+  var w;
+  var h;
 function setup() { 
   textSize(22); 
+  h=windowHeight;
+  w=windowWidth;
   inputArea = createElement("textarea"); 
   inputArea.position(100,55); 
     
@@ -42,30 +44,26 @@ function draw(){
   
 function saveastxt() { 
 //  save_as=prompt("write your custom name then put--> . and type your custom file extention");
-  stringList = inputArea.value().split("\n"); 
   let writer = createWriter('text.txt');
-  writer.write([stringList]);
+  writer.write(inputArea.value());
   writer.close();
 } 
 function saveasdoc() { 
 //  save_as=prompt("write your custom name then put--> . and type your custom file extention");
-  stringList = inputArea.value().split("\n"); 
   let writer = createWriter('word doc.doc');
-  writer.write([stringList]);
+  writer.write(inputArea.value());
   writer.close();
 } 
 function saveasparascript() { 
 //  save_as=prompt("write your custom name then put--> . and type your custom file extention");
-  stringList = inputArea.value().split("\n"); 
   let writer = createWriter('custom.parascript');
-  writer.write([stringList]);
+  writer.write(inputArea.value());
   writer.close();
 } 
 function saveascustom() { 
-save_as=prompt("write your custom name then put--> . and type your custom file extention");
-  stringList = inputArea.value().split("\n"); 
+save_as=prompt("write your custom name then put--> . and type your custom file extention"); 
   let writer = createWriter(save_as);
-  writer.write([stringList]);
+  writer.write(inputArea.value());
   writer.close();
 } 
 function saveaspdf() { 
