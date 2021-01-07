@@ -7,6 +7,10 @@ function setup() {
   textSize(22); 
   h=windowHeight;
   w=windowWidth;
+  
+    input = createFileInput(handleFile);
+  input.position(0,h);
+  
   inputArea = createElement("textarea"); 
   inputArea.position(100,55); 
     
@@ -87,4 +91,8 @@ function backg(){
   if(c3>250){
   c3=200;
   }
+}
+
+function handleFile(file){
+  inputArea.value(file.data);
 }
